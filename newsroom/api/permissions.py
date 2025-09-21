@@ -1,18 +1,68 @@
-# newsroom/permissions.py
+"""
+Custom permission classes for the Newsroom API.
+
+This module defines role-based and action-based permission classes
+for use with Django REST Framework viewsets and views.
+
+Helpers
+-------
+The helper functions (_is_auth, _is_admin, etc.) wrap role checks on
+the custom User model, handling missing methods gracefully.
+"""
+
 from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
 # ---- Helpers ---------------------------------------------------------------
 
 def _is_auth(u) -> bool:
+    """
+    Check if the user is authenticated.
+
+    Parameters
+    ----------
+    u : User
+        The user instance.
+
+    Returns
+    -------
+    bool
+        True if authenticated, else False.
+    """
     return bool(u and u.is_authenticated)
 
 
 def _is_admin(u) -> bool:
+    """
+    Check if the user is a staff or superuser.
+
+    Parameters
+    ----------
+    u : User
+        The user instance.
+
+    Returns
+    -------
+    bool
+        True if staff or superuser, else False.
+    """
     return bool(getattr(u, "is_staff", False) or getattr(u, "is_superuser", False))
 
 
 def _is_reader(u) -> bool:
+    """
+    Check if the user has the Reader role.
+
+    Parameters
+    ----------
+    u : User
+        The user instance.
+
+    Returns
+    -------
+    bool
+        True if Reader, else False.
+    """
     try:
         return u.is_reader()
     except Exception:
@@ -20,6 +70,19 @@ def _is_reader(u) -> bool:
 
 
 def _is_editor(u) -> bool:
+    """
+    Check if the user has the Editor role.
+
+    Parameters
+    ----------
+    u : User
+        The user instance.
+
+    Returns
+    -------
+    bool
+        True if Editor, else False.
+    """
     try:
         return u.is_editor()
     except Exception:
@@ -27,6 +90,19 @@ def _is_editor(u) -> bool:
 
 
 def _is_journalist(u) -> bool:
+    """
+    Check if the user has the Journalist role.
+
+    Parameters
+    ----------
+    u : User
+        The user instance.
+
+    Returns
+    -------
+    bool
+        True if Journalist, else False.
+    """
     try:
         return u.is_journalist()
     except Exception:
@@ -41,6 +117,9 @@ class IsReader(BasePermission):
     """
 
     def has_permission(self, request, view):
+        """
+        Check if the user is a Reader or admin.
+        """
         u = request.user
         return _is_auth(u) and (_is_reader(u) or _is_admin(u))
 
@@ -51,6 +130,9 @@ class IsEditor(BasePermission):
     """
 
     def has_permission(self, request, view):
+        """
+        Check if the user is an Editor or admin.
+        """
         u = request.user
         return _is_auth(u) and (_is_editor(u) or _is_admin(u))
 
@@ -61,6 +143,9 @@ class IsJournalist(BasePermission):
     """
 
     def has_permission(self, request, view):
+        """
+        Check if the user is a Journalist or admin.
+        """
         u = request.user
         return _is_auth(u) and (_is_journalist(u) or _is_admin(u))
 
@@ -69,10 +154,13 @@ class IsJournalist(BasePermission):
 
 class ReadOnly(BasePermission):
     """
-    Allow only safe (GET/HEAD/OPTIONS) methods.
+    Allow only safe methods (GET/HEAD/OPTIONS).
     """
 
     def has_permission(self, request, view):
+        """
+        Check if the request method is safe.
+        """
         return request.method in SAFE_METHODS
 
 
@@ -82,6 +170,9 @@ class IsEditorOrReadOnly(BasePermission):
     """
 
     def has_permission(self, request, view):
+        """
+        Check read-only for all, write access for Editors/admins.
+        """
         if request.method in SAFE_METHODS:
             return True
         u = request.user
@@ -94,6 +185,9 @@ class IsJournalistOrReadOnly(BasePermission):
     """
 
     def has_permission(self, request, view):
+        """
+        Check read-only for all, write access for Journalists/admins.
+        """
         if request.method in SAFE_METHODS:
             return True
         u = request.user
@@ -110,6 +204,19 @@ class IsAuthorOrEditor(BasePermission):
     """
 
     def has_object_permission(self, request, view, obj):
+        """
+        Check if user is author, Editor, or admin for unsafe methods.
+
+        Parameters
+        ----------
+        obj : Model
+            The object being accessed.
+
+        Returns
+        -------
+        bool
+            True if permission is granted, else False.
+        """
         if request.method in SAFE_METHODS:
             return True
         u = request.user
@@ -122,10 +229,18 @@ class IsAuthorOrEditor(BasePermission):
 class CanApprove(BasePermission):
     """
     Allow users who can approve (custom model perm) or Editors/admins.
-    Your Article model defines Meta.permissions = [("can_approve", "...")].
+
+    Notes
+    -----
+    The Article model defines::
+
+        Meta.permissions = [("can_approve", "Can approve articles")]
     """
 
     def has_permission(self, request, view):
+        """
+        Check if user is allowed to approve articles.
+        """
         u = request.user
         return _is_auth(u) and (
             _is_editor(u) or _is_admin(u) or u.has_perm("newsroom.can_approve")
