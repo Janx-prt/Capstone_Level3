@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>newsroom.api.views &mdash; scoop_newsroom 00.00.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=d7bb8d4d"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            scoop_newsroom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Module contents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../newsroom.html">newsroom package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html">newsroom.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.admin">newsroom.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.ArticleAdmin"><code class="docutils literal notranslate"><span class="pre">ArticleAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.JournalistProfileAdmin"><code class="docutils literal notranslate"><span class="pre">JournalistProfileAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.PublisherAdmin"><code class="docutils literal notranslate"><span class="pre">PublisherAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.approve_articles"><code class="docutils literal notranslate"><span class="pre">approve_articles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.apps">newsroom.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.apps.NewsroomConfig"><code class="docutils literal notranslate"><span class="pre">NewsroomConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.emails">newsroom.emails module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.emails.notify"><code class="docutils literal notranslate"><span class="pre">notify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.forms">newsroom.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.forms.ArticleForm"><code class="docutils literal notranslate"><span class="pre">ArticleForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.forms.SignUpForm"><code class="docutils literal notranslate"><span class="pre">SignUpForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.forms.StyledAuthForm"><code class="docutils literal notranslate"><span class="pre">StyledAuthForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.models">newsroom.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.models.JournalistProfile"><code class="docutils literal notranslate"><span class="pre">JournalistProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.models.Publisher"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.signals">newsroom.signals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.signals.ensure_journalist_profile"><code class="docutils literal notranslate"><span class="pre">ensure_journalist_profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.signals.mark_just_approved"><code class="docutils literal notranslate"><span class="pre">mark_just_approved()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.signals.on_article_approved"><code class="docutils literal notranslate"><span class="pre">on_article_approved()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.test_api">newsroom.test_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.test_api.APITests"><code class="docutils literal notranslate"><span class="pre">APITests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.urls">newsroom.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.urls.app_name"><code class="docutils literal notranslate"><span class="pre">app_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.utils_x">newsroom.utils_x module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.utils_x.post_to_x"><code class="docutils literal notranslate"><span class="pre">post_to_x()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.views">newsroom.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ArticleCreateView"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ArticleDeleteView"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ArticleDetailView"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ArticleUpdateView"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.DashboardView"><code class="docutils literal notranslate"><span class="pre">DashboardView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.LandingView"><code class="docutils literal notranslate"><span class="pre">LandingView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.LoginView"><code class="docutils literal notranslate"><span class="pre">LoginView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ReviewQueueView"><code class="docutils literal notranslate"><span class="pre">ReviewQueueView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.SignUpView"><code class="docutils literal notranslate"><span class="pre">SignUpView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.approve_article"><code class="docutils literal notranslate"><span class="pre">approve_article()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../newsroom.api.html">newsroom.api package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api.permissions">newsroom.api.permissions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.CanApprove"><code class="docutils literal notranslate"><span class="pre">CanApprove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsAuthorOrEditor"><code class="docutils literal notranslate"><span class="pre">IsAuthorOrEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsEditor"><code class="docutils literal notranslate"><span class="pre">IsEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsEditorOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsEditorOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsJournalist"><code class="docutils literal notranslate"><span class="pre">IsJournalist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsJournalistOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsJournalistOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsReader"><code class="docutils literal notranslate"><span class="pre">IsReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.ReadOnly"><code class="docutils literal notranslate"><span class="pre">ReadOnly</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api.serializers">newsroom.api.serializers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.serializers.ArticleSerializer"><code class="docutils literal notranslate"><span class="pre">ArticleSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.serializers.PublisherSerializer"><code class="docutils literal notranslate"><span class="pre">PublisherSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api.urls">newsroom.api.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.urls.router"><code class="docutils literal notranslate"><span class="pre">router</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api.views">newsroom.api.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.views.ArticleViewSet"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.views.PublisherViewSet"><code class="docutils literal notranslate"><span class="pre">PublisherViewSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../capostone.html">capostone package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone.asgi">capostone.asgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone.settings">capostone.settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone.urls">capostone.urls module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../capostone.html#capostone.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone.wsgi">capostone.wsgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../manage.html">manage module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../manage.html#manage.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">scoop_newsroom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">newsroom.api.views</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for newsroom.api.views</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">API viewsets for the Newsroom application.</span>
+
+<span class="sd">This module defines viewsets for articles and publishers with</span>
+<span class="sd">role-based permissions and custom actions.</span>
+
+<span class="sd">- :class:`ArticleViewSet` – CRUD operations, approval workflow, and</span>
+<span class="sd">  personalized article queries.</span>
+<span class="sd">- :class:`PublisherViewSet` – Read-only access to publishers.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">timezone</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Q</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework</span><span class="w"> </span><span class="kn">import</span> <span class="n">viewsets</span><span class="p">,</span> <span class="n">permissions</span><span class="p">,</span> <span class="n">status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">action</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">PermissionDenied</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">newsroom.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Article</span><span class="p">,</span> <span class="n">Publisher</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.serializers</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArticleSerializer</span><span class="p">,</span> <span class="n">PublisherSerializer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IsJournalist</span><span class="p">,</span> <span class="n">IsEditor</span>
+
+
+<div class="viewcode-block" id="ArticleViewSet">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.views.ArticleViewSet">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ArticleViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Viewset for managing :class:`~newsroom.models.Article` instances.</span>
+
+<span class="sd">    Provides default CRUD actions along with custom actions</span>
+<span class="sd">    for approving, listing personal articles, and listing</span>
+<span class="sd">    subscribed articles. Enforces role-based permissions.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    queryset : QuerySet</span>
+<span class="sd">        Default queryset with related publisher and author preloaded.</span>
+<span class="sd">    serializer_class : ArticleSerializer</span>
+<span class="sd">        Serializer used for articles.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s2">&quot;publisher&quot;</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">)</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">ArticleSerializer</span>
+
+<div class="viewcode-block" id="ArticleViewSet.get_permissions">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.views.ArticleViewSet.get_permissions">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_permissions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return appropriate permissions depending on the action.</span>
+
+<span class="sd">        - **list, retrieve, mine, subscribed** → Authenticated users.</span>
+<span class="sd">        - **create, update, partial_update, destroy** → Journalists only.</span>
+<span class="sd">        - **approve** → Editors only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="s2">&quot;retrieve&quot;</span><span class="p">,</span> <span class="s2">&quot;mine&quot;</span><span class="p">,</span> <span class="s2">&quot;subscribed&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">permissions</span><span class="o">.</span><span class="n">IsAuthenticated</span><span class="p">()]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;create&quot;</span><span class="p">,</span> <span class="s2">&quot;update&quot;</span><span class="p">,</span> <span class="s2">&quot;partial_update&quot;</span><span class="p">,</span> <span class="s2">&quot;destroy&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">IsJournalist</span><span class="p">()]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;approve&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">IsEditor</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_permissions</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="ArticleViewSet.get_queryset">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.views.ArticleViewSet.get_queryset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a filtered queryset based on the user&#39;s role.</span>
+
+<span class="sd">        - Anonymous users: only approved articles.</span>
+<span class="sd">        - Staff/superusers: all articles.</span>
+<span class="sd">        - Editors: all articles.</span>
+<span class="sd">        - Journalists: own articles + approved ones.</span>
+<span class="sd">        - Readers: only approved articles.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="n">qs</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">qs</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span> <span class="ow">or</span> <span class="n">user</span><span class="o">.</span><span class="n">is_staff</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">qs</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="s2">&quot;is_editor&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">is_editor</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">qs</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="s2">&quot;is_journalist&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">is_journalist</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">qs</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">user</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span><span class="p">))</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">qs</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ArticleViewSet.perform_create">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.views.ArticleViewSet.perform_create">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">perform_create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new article authored by the current user.</span>
+
+<span class="sd">        Ensures only journalists (or staff/superusers) can create.</span>
+<span class="sd">        New articles are saved with status ``PENDING``.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        PermissionDenied</span>
+<span class="sd">            If the user is not allowed to create articles.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_journalist&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">u</span><span class="o">.</span><span class="n">is_journalist</span><span class="p">())</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">is_staff</span> <span class="ow">or</span> <span class="n">u</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="s2">&quot;Only journalists can create articles.&quot;</span><span class="p">)</span>
+        <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">u</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">PENDING</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ArticleViewSet.perform_update">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.views.ArticleViewSet.perform_update">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">perform_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update an article with role-based restrictions.</span>
+
+<span class="sd">        - Editors: can update any article.</span>
+<span class="sd">        - Journalists: can update only their own articles.</span>
+<span class="sd">        - Staff/superusers: unrestricted.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        PermissionDenied</span>
+<span class="sd">            If the user is not allowed to update the article.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="n">obj</span><span class="p">:</span> <span class="n">Article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">is_superuser</span> <span class="ow">or</span> <span class="n">u</span><span class="o">.</span><span class="n">is_staff</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_editor&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">u</span><span class="o">.</span><span class="n">is_editor</span><span class="p">():</span>
+                <span class="k">pass</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_journalist&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">u</span><span class="o">.</span><span class="n">is_journalist</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">author_id</span> <span class="o">!=</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span>
+                        <span class="s2">&quot;You can only modify your own articles.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="s2">&quot;Not allowed.&quot;</span><span class="p">)</span>
+        <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="ArticleViewSet.perform_destroy">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.views.ArticleViewSet.perform_destroy">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">perform_destroy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete an article with role-based restrictions.</span>
+
+<span class="sd">        - Editors: can delete any article.</span>
+<span class="sd">        - Journalists: can delete only their own articles.</span>
+<span class="sd">        - Staff/superusers: unrestricted.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        PermissionDenied</span>
+<span class="sd">            If the user is not allowed to delete the article.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">is_superuser</span> <span class="ow">or</span> <span class="n">u</span><span class="o">.</span><span class="n">is_staff</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_editor&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">u</span><span class="o">.</span><span class="n">is_editor</span><span class="p">():</span>
+                <span class="k">pass</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_journalist&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">u</span><span class="o">.</span><span class="n">is_journalist</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">instance</span><span class="o">.</span><span class="n">author_id</span> <span class="o">!=</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span>
+                        <span class="s2">&quot;You can only delete your own articles.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">(</span><span class="s2">&quot;Not allowed.&quot;</span><span class="p">)</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span></div>
+
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">approve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Approve an article.</span>
+
+<span class="sd">        Changes status to APPROVED and sets ``approved_at`` timestamp if needed.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Response</span>
+<span class="sd">            JSON with ``status`` and ``approved_at`` timestamp.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">article</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span><span class="p">:</span>
+            <span class="n">article</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">article</span><span class="o">.</span><span class="n">approved_at</span><span class="p">:</span>
+                <span class="n">article</span><span class="o">.</span><span class="n">approved_at</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+            <span class="n">article</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">update_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="s2">&quot;approved_at&quot;</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span>
+                <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;approved&quot;</span><span class="p">,</span> <span class="s2">&quot;approved_at&quot;</span><span class="p">:</span> <span class="n">article</span><span class="o">.</span><span class="n">approved_at</span><span class="p">},</span>
+                <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;already_approved&quot;</span><span class="p">,</span> <span class="s2">&quot;approved_at&quot;</span><span class="p">:</span> <span class="n">article</span><span class="o">.</span><span class="n">approved_at</span><span class="p">},</span>
+            <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List articles authored by the current journalist.</span>
+
+<span class="sd">        Only returns results for journalist users.</span>
+<span class="sd">        Results are ordered by newest first.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="n">qs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">u</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+            <span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_journalist&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">u</span><span class="o">.</span><span class="n">is_journalist</span><span class="p">()</span> <span class="k">else</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">paginate_queryset</span><span class="p">(</span><span class="n">qs</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;-created_at&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">page</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_paginated_response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_serializer</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_serializer</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">subscribed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List approved articles from a reader&#39;s subscriptions.</span>
+
+<span class="sd">        Includes articles from:</span>
+<span class="sd">        - Publishers the reader is subscribed to.</span>
+<span class="sd">        - Journalists the reader is subscribed to.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Response</span>
+<span class="sd">            JSON list of approved subscribed articles.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="n">qs</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_reader&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">u</span><span class="o">.</span><span class="n">is_reader</span><span class="p">():</span>
+            <span class="n">qs</span> <span class="o">=</span> <span class="n">qs</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                <span class="n">Q</span><span class="p">(</span><span class="n">publisher__in</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">subscriptions_to_publishers</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+                <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">author__in</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">subscriptions_to_journalists</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">qs</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
+        <span class="n">qs</span> <span class="o">=</span> <span class="n">qs</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;-approved_at&quot;</span><span class="p">,</span> <span class="s2">&quot;-created_at&quot;</span><span class="p">)</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">paginate_queryset</span><span class="p">(</span><span class="n">qs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">page</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_paginated_response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_serializer</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_serializer</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PublisherViewSet">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.views.PublisherViewSet">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PublisherViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ReadOnlyModelViewSet</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read-only viewset for :class:`~newsroom.models.Publisher`.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    queryset : QuerySet</span>
+<span class="sd">        All publishers.</span>
+<span class="sd">    serializer_class : PublisherSerializer</span>
+<span class="sd">        Serializer used for publishers.</span>
+<span class="sd">    permission_classes : list</span>
+<span class="sd">        Requires authentication.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Publisher</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">PublisherSerializer</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">permissions</span><span class="o">.</span><span class="n">IsAuthenticated</span><span class="p">]</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Janke.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

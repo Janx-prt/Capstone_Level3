@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview: module code &mdash; scoop_newsroom 00.00.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d7bb8d4d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            scoop_newsroom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Module contents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../newsroom.html">newsroom package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html">newsroom.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.admin">newsroom.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.admin.ArticleAdmin"><code class="docutils literal notranslate"><span class="pre">ArticleAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.admin.JournalistProfileAdmin"><code class="docutils literal notranslate"><span class="pre">JournalistProfileAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.admin.PublisherAdmin"><code class="docutils literal notranslate"><span class="pre">PublisherAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.admin.approve_articles"><code class="docutils literal notranslate"><span class="pre">approve_articles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.apps">newsroom.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.apps.NewsroomConfig"><code class="docutils literal notranslate"><span class="pre">NewsroomConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.emails">newsroom.emails module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.emails.notify"><code class="docutils literal notranslate"><span class="pre">notify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.forms">newsroom.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.forms.ArticleForm"><code class="docutils literal notranslate"><span class="pre">ArticleForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.forms.SignUpForm"><code class="docutils literal notranslate"><span class="pre">SignUpForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.forms.StyledAuthForm"><code class="docutils literal notranslate"><span class="pre">StyledAuthForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.models">newsroom.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.models.JournalistProfile"><code class="docutils literal notranslate"><span class="pre">JournalistProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.models.Publisher"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.signals">newsroom.signals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.signals.ensure_journalist_profile"><code class="docutils literal notranslate"><span class="pre">ensure_journalist_profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.signals.mark_just_approved"><code class="docutils literal notranslate"><span class="pre">mark_just_approved()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.signals.on_article_approved"><code class="docutils literal notranslate"><span class="pre">on_article_approved()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.test_api">newsroom.test_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.test_api.APITests"><code class="docutils literal notranslate"><span class="pre">APITests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.urls">newsroom.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.urls.app_name"><code class="docutils literal notranslate"><span class="pre">app_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.utils_x">newsroom.utils_x module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.utils_x.post_to_x"><code class="docutils literal notranslate"><span class="pre">post_to_x()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom.views">newsroom.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.ArticleCreateView"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.ArticleDeleteView"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.ArticleDetailView"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.ArticleUpdateView"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.DashboardView"><code class="docutils literal notranslate"><span class="pre">DashboardView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.LandingView"><code class="docutils literal notranslate"><span class="pre">LandingView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.LoginView"><code class="docutils literal notranslate"><span class="pre">LoginView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.ReviewQueueView"><code class="docutils literal notranslate"><span class="pre">ReviewQueueView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.SignUpView"><code class="docutils literal notranslate"><span class="pre">SignUpView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.html#newsroom.views.approve_article"><code class="docutils literal notranslate"><span class="pre">approve_article()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.html#module-newsroom">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../newsroom.api.html">newsroom.api package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.api.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.api.html#module-newsroom.api.permissions">newsroom.api.permissions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.permissions.CanApprove"><code class="docutils literal notranslate"><span class="pre">CanApprove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.permissions.IsAuthorOrEditor"><code class="docutils literal notranslate"><span class="pre">IsAuthorOrEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.permissions.IsEditor"><code class="docutils literal notranslate"><span class="pre">IsEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.permissions.IsEditorOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsEditorOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.permissions.IsJournalist"><code class="docutils literal notranslate"><span class="pre">IsJournalist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.permissions.IsJournalistOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsJournalistOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.permissions.IsReader"><code class="docutils literal notranslate"><span class="pre">IsReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.permissions.ReadOnly"><code class="docutils literal notranslate"><span class="pre">ReadOnly</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.api.html#module-newsroom.api.serializers">newsroom.api.serializers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.serializers.ArticleSerializer"><code class="docutils literal notranslate"><span class="pre">ArticleSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.serializers.PublisherSerializer"><code class="docutils literal notranslate"><span class="pre">PublisherSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.api.html#module-newsroom.api.urls">newsroom.api.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.urls.router"><code class="docutils literal notranslate"><span class="pre">router</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.api.html#module-newsroom.api.views">newsroom.api.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.views.ArticleViewSet"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../newsroom.api.html#newsroom.api.views.PublisherViewSet"><code class="docutils literal notranslate"><span class="pre">PublisherViewSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../newsroom.api.html#module-newsroom.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../capostone.html">capostone package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../capostone.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../capostone.html#module-capostone.asgi">capostone.asgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../capostone.html#module-capostone.settings">capostone.settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../capostone.html#module-capostone.urls">capostone.urls module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../capostone.html#capostone.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../capostone.html#module-capostone.wsgi">capostone.wsgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../capostone.html#module-capostone">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../manage.html">manage module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html#manage.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scoop_newsroom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Overview: module code</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>All modules for which code is available</h1>
+<ul><li><a href="django/contrib/auth/admin.html">django.contrib.auth.admin</a></li>
+<li><a href="django/contrib/auth/models.html">django.contrib.auth.models</a></li>
+<li><a href="django/contrib/auth/views.html">django.contrib.auth.views</a></li>
+<li><a href="django/db/models/query.html">django.db.models.query</a></li>
+<li><a href="manage.html">manage</a></li>
+<li><a href="newsroom/admin.html">newsroom.admin</a></li>
+<li><a href="newsroom/api/permissions.html">newsroom.api.permissions</a></li>
+<li><a href="newsroom/api/serializers.html">newsroom.api.serializers</a></li>
+<li><a href="newsroom/api/views.html">newsroom.api.views</a></li>
+<li><a href="newsroom/apps.html">newsroom.apps</a></li>
+<li><a href="newsroom/emails.html">newsroom.emails</a></li>
+<li><a href="newsroom/forms.html">newsroom.forms</a></li>
+<li><a href="newsroom/models.html">newsroom.models</a></li>
+<li><a href="newsroom/signals.html">newsroom.signals</a></li>
+<li><a href="newsroom/test_api.html">newsroom.test_api</a></li>
+<li><a href="newsroom/utils_x.html">newsroom.utils_x</a></li>
+<li><a href="newsroom/views.html">newsroom.views</a></li>
+<li><a href="rest_framework/decorators.html">rest_framework.decorators</a></li>
+<li><a href="rest_framework/routers.html">rest_framework.routers</a></li>
+</ul>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Janke.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

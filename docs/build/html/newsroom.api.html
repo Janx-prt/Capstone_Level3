@@ -1,0 +1,851 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>newsroom.api package &mdash; scoop_newsroom 00.00.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d7bb8d4d"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="capostone package" href="capostone.html" />
+    <link rel="prev" title="newsroom package" href="newsroom.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            scoop_newsroom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module contents</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="newsroom.html">newsroom package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="newsroom.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">newsroom.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.admin">newsroom.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.admin.ArticleAdmin"><code class="docutils literal notranslate"><span class="pre">ArticleAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.admin.JournalistProfileAdmin"><code class="docutils literal notranslate"><span class="pre">JournalistProfileAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.admin.PublisherAdmin"><code class="docutils literal notranslate"><span class="pre">PublisherAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.admin.approve_articles"><code class="docutils literal notranslate"><span class="pre">approve_articles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.apps">newsroom.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.apps.NewsroomConfig"><code class="docutils literal notranslate"><span class="pre">NewsroomConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.emails">newsroom.emails module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.emails.notify"><code class="docutils literal notranslate"><span class="pre">notify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.forms">newsroom.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.forms.ArticleForm"><code class="docutils literal notranslate"><span class="pre">ArticleForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.forms.SignUpForm"><code class="docutils literal notranslate"><span class="pre">SignUpForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.forms.StyledAuthForm"><code class="docutils literal notranslate"><span class="pre">StyledAuthForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.models">newsroom.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.models.JournalistProfile"><code class="docutils literal notranslate"><span class="pre">JournalistProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.models.Publisher"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.signals">newsroom.signals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.signals.ensure_journalist_profile"><code class="docutils literal notranslate"><span class="pre">ensure_journalist_profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.signals.mark_just_approved"><code class="docutils literal notranslate"><span class="pre">mark_just_approved()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.signals.on_article_approved"><code class="docutils literal notranslate"><span class="pre">on_article_approved()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.test_api">newsroom.test_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.test_api.APITests"><code class="docutils literal notranslate"><span class="pre">APITests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.urls">newsroom.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.urls.app_name"><code class="docutils literal notranslate"><span class="pre">app_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.utils_x">newsroom.utils_x module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.utils_x.post_to_x"><code class="docutils literal notranslate"><span class="pre">post_to_x()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom.views">newsroom.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.ArticleCreateView"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.ArticleDeleteView"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.ArticleDetailView"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.ArticleUpdateView"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.DashboardView"><code class="docutils literal notranslate"><span class="pre">DashboardView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.LandingView"><code class="docutils literal notranslate"><span class="pre">LandingView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.LoginView"><code class="docutils literal notranslate"><span class="pre">LoginView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.ReviewQueueView"><code class="docutils literal notranslate"><span class="pre">ReviewQueueView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.SignUpView"><code class="docutils literal notranslate"><span class="pre">SignUpView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="newsroom.html#newsroom.views.approve_article"><code class="docutils literal notranslate"><span class="pre">approve_article()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="newsroom.html#module-newsroom">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">newsroom.api package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-newsroom.api.permissions">newsroom.api.permissions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.permissions.CanApprove"><code class="docutils literal notranslate"><span class="pre">CanApprove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.permissions.IsAuthorOrEditor"><code class="docutils literal notranslate"><span class="pre">IsAuthorOrEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.permissions.IsEditor"><code class="docutils literal notranslate"><span class="pre">IsEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.permissions.IsEditorOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsEditorOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.permissions.IsJournalist"><code class="docutils literal notranslate"><span class="pre">IsJournalist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.permissions.IsJournalistOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsJournalistOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.permissions.IsReader"><code class="docutils literal notranslate"><span class="pre">IsReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.permissions.ReadOnly"><code class="docutils literal notranslate"><span class="pre">ReadOnly</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-newsroom.api.serializers">newsroom.api.serializers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.serializers.ArticleSerializer"><code class="docutils literal notranslate"><span class="pre">ArticleSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.serializers.PublisherSerializer"><code class="docutils literal notranslate"><span class="pre">PublisherSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-newsroom.api.urls">newsroom.api.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.urls.router"><code class="docutils literal notranslate"><span class="pre">router</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-newsroom.api.views">newsroom.api.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.views.ArticleViewSet"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newsroom.api.views.PublisherViewSet"><code class="docutils literal notranslate"><span class="pre">PublisherViewSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-newsroom.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capostone.html">capostone package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capostone.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capostone.html#module-capostone.asgi">capostone.asgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capostone.html#module-capostone.settings">capostone.settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capostone.html#module-capostone.urls">capostone.urls module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="capostone.html#capostone.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="capostone.html#module-capostone.wsgi">capostone.wsgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capostone.html#module-capostone">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manage.html">manage module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manage.html#manage.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">scoop_newsroom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Module contents</a></li>
+          <li class="breadcrumb-item"><a href="newsroom.html">newsroom package</a></li>
+      <li class="breadcrumb-item active">newsroom.api package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/newsroom.api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="newsroom-api-package">
+<h1>newsroom.api package<a class="headerlink" href="#newsroom-api-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-newsroom.api.permissions">
+<span id="newsroom-api-permissions-module"></span><h2>newsroom.api.permissions module<a class="headerlink" href="#module-newsroom.api.permissions" title="Link to this heading"></a></h2>
+<p>Custom permission classes for the Newsroom API.</p>
+<p>This module defines role-based and action-based permission classes
+for use with Django REST Framework viewsets and views.</p>
+<section id="helpers">
+<h3>Helpers<a class="headerlink" href="#helpers" title="Link to this heading"></a></h3>
+<p>The helper functions (_is_auth, _is_admin, etc.) wrap role checks on
+the custom User model, handling missing methods gracefully.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.permissions.CanApprove">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.permissions.</span></span><span class="sig-name descname"><span class="pre">CanApprove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#CanApprove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.CanApprove" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>Allow users who can approve (custom model perm) or Editors/admins.</p>
+<p class="rubric">Notes</p>
+<p>The Article model defines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Meta</span><span class="o">.</span><span class="n">permissions</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;can_approve&quot;</span><span class="p">,</span> <span class="s2">&quot;Can approve articles&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.permissions.CanApprove.has_permission">
+<span class="sig-name descname"><span class="pre">has_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#CanApprove.has_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.CanApprove.has_permission" title="Link to this definition"></a></dt>
+<dd><p>Check if user is allowed to approve articles.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsAuthorOrEditor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.permissions.</span></span><span class="sig-name descname"><span class="pre">IsAuthorOrEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsAuthorOrEditor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsAuthorOrEditor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>SAFE methods are allowed.
+For write methods: allow if the user is the object’s author,
+an Editor, or staff/superuser.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsAuthorOrEditor.has_object_permission">
+<span class="sig-name descname"><span class="pre">has_object_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsAuthorOrEditor.has_object_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsAuthorOrEditor.has_object_permission" title="Link to this definition"></a></dt>
+<dd><p>Check if user is author, Editor, or admin for unsafe methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>Model</em>) – The object being accessed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if permission is granted, else False.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsEditor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.permissions.</span></span><span class="sig-name descname"><span class="pre">IsEditor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsEditor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsEditor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>Allow only Editors (plus staff/superusers).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsEditor.has_permission">
+<span class="sig-name descname"><span class="pre">has_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsEditor.has_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsEditor.has_permission" title="Link to this definition"></a></dt>
+<dd><p>Check if the user is an Editor or admin.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsEditorOrReadOnly">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.permissions.</span></span><span class="sig-name descname"><span class="pre">IsEditorOrReadOnly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsEditorOrReadOnly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsEditorOrReadOnly" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>Anyone can read; only Editors (or staff/superusers) can modify.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsEditorOrReadOnly.has_permission">
+<span class="sig-name descname"><span class="pre">has_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsEditorOrReadOnly.has_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsEditorOrReadOnly.has_permission" title="Link to this definition"></a></dt>
+<dd><p>Check read-only for all, write access for Editors/admins.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsJournalist">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.permissions.</span></span><span class="sig-name descname"><span class="pre">IsJournalist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsJournalist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsJournalist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>Allow only Journalists (plus staff/superusers).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsJournalist.has_permission">
+<span class="sig-name descname"><span class="pre">has_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsJournalist.has_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsJournalist.has_permission" title="Link to this definition"></a></dt>
+<dd><p>Check if the user is a Journalist or admin.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsJournalistOrReadOnly">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.permissions.</span></span><span class="sig-name descname"><span class="pre">IsJournalistOrReadOnly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsJournalistOrReadOnly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsJournalistOrReadOnly" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>Anyone can read; only Journalists (or staff/superusers) can modify.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsJournalistOrReadOnly.has_permission">
+<span class="sig-name descname"><span class="pre">has_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsJournalistOrReadOnly.has_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsJournalistOrReadOnly.has_permission" title="Link to this definition"></a></dt>
+<dd><p>Check read-only for all, write access for Journalists/admins.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsReader">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.permissions.</span></span><span class="sig-name descname"><span class="pre">IsReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsReader" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>Allow only Readers (plus staff/superusers).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.permissions.IsReader.has_permission">
+<span class="sig-name descname"><span class="pre">has_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#IsReader.has_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.IsReader.has_permission" title="Link to this definition"></a></dt>
+<dd><p>Check if the user is a Reader or admin.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.permissions.ReadOnly">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.permissions.</span></span><span class="sig-name descname"><span class="pre">ReadOnly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#ReadOnly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.ReadOnly" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>Allow only safe methods (GET/HEAD/OPTIONS).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.permissions.ReadOnly.has_permission">
+<span class="sig-name descname"><span class="pre">has_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/permissions.html#ReadOnly.has_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.permissions.ReadOnly.has_permission" title="Link to this definition"></a></dt>
+<dd><p>Check if the request method is safe.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-newsroom.api.serializers">
+<span id="newsroom-api-serializers-module"></span><h2>newsroom.api.serializers module<a class="headerlink" href="#module-newsroom.api.serializers" title="Link to this heading"></a></h2>
+<p>Serializers for the Newsroom API.</p>
+<p>This module defines serializers for:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="newsroom.html#newsroom.models.Publisher" title="newsroom.models.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Publisher</span></code></a></p></li>
+<li><p><a class="reference internal" href="newsroom.html#newsroom.models.Article" title="newsroom.models.Article"><code class="xref py py-class docutils literal notranslate"><span class="pre">Article</span></code></a></p></li>
+</ul>
+<p>They transform model instances into JSON representations and handle
+validation for incoming data.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.serializers.ArticleSerializer">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.serializers.</span></span><span class="sig-name descname"><span class="pre">ArticleSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/serializers.html#ArticleSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.serializers.ArticleSerializer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for <a class="reference internal" href="newsroom.html#newsroom.models.Article" title="newsroom.models.Article"><code class="xref py py-class docutils literal notranslate"><span class="pre">Article</span></code></a>.</p>
+<p>Includes nested publisher representation (read-only),
+related author string, and an extra <code class="docutils literal notranslate"><span class="pre">publisher_id</span></code> field
+for write operations.</p>
+<section id="fields">
+<h3>Fields<a class="headerlink" href="#fields" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>id<span class="classifier">int</span></dt><dd><p>Primary key of the article.</p>
+</dd>
+<dt>title<span class="classifier">str</span></dt><dd><p>Title of the article.</p>
+</dd>
+<dt>body<span class="classifier">str</span></dt><dd><p>Main content of the article.</p>
+</dd>
+<dt>cover_url<span class="classifier">str</span></dt><dd><p>Optional cover image URL.</p>
+</dd>
+<dt>status<span class="classifier">str</span></dt><dd><p>Workflow status (Draft, Pending, Approved, Rejected).</p>
+</dd>
+<dt>publisher<span class="classifier">PublisherSerializer</span></dt><dd><p>Nested publisher representation (read-only).</p>
+</dd>
+<dt>publisher_id<span class="classifier">int</span></dt><dd><p>Primary key of the publisher (write-only).</p>
+</dd>
+<dt>author<span class="classifier">str</span></dt><dd><p>String representation of the author (read-only).</p>
+</dd>
+<dt>author_username<span class="classifier">str</span></dt><dd><p>Username of the author (read-only).</p>
+</dd>
+<dt>created_at<span class="classifier">datetime</span></dt><dd><p>Timestamp of creation (read-only).</p>
+</dd>
+<dt>updated_at<span class="classifier">datetime</span></dt><dd><p>Timestamp of last update (read-only).</p>
+</dd>
+<dt>approved_at<span class="classifier">datetime</span></dt><dd><p>Timestamp of approval (read-only).</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.serializers.ArticleSerializer.Meta">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/newsroom/api/serializers.html#ArticleSerializer.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.serializers.ArticleSerializer.Meta" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.serializers.ArticleSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'title',</span> <span class="pre">'body',</span> <span class="pre">'cover_url',</span> <span class="pre">'status',</span> <span class="pre">'publisher',</span> <span class="pre">'publisher_id',</span> <span class="pre">'author',</span> <span class="pre">'author_username',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at',</span> <span class="pre">'approved_at']</span></em><a class="headerlink" href="#newsroom.api.serializers.ArticleSerializer.Meta.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.serializers.ArticleSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#newsroom.api.serializers.ArticleSerializer.Meta.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="newsroom.html#newsroom.models.Article" title="newsroom.models.Article"><code class="xref py py-class docutils literal notranslate"><span class="pre">Article</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.serializers.ArticleSerializer.Meta.read_only_fields">
+<span class="sig-name descname"><span class="pre">read_only_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['status',</span> <span class="pre">'author',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at',</span> <span class="pre">'approved_at']</span></em><a class="headerlink" href="#newsroom.api.serializers.ArticleSerializer.Meta.read_only_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.serializers.PublisherSerializer">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.serializers.</span></span><span class="sig-name descname"><span class="pre">PublisherSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/serializers.html#PublisherSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.serializers.PublisherSerializer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for <a class="reference internal" href="newsroom.html#newsroom.models.Publisher" title="newsroom.models.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Publisher</span></code></a>.</p>
+<section id="id1">
+<h3>Fields<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>id<span class="classifier">int</span></dt><dd><p>Primary key of the publisher.</p>
+</dd>
+<dt>name<span class="classifier">str</span></dt><dd><p>Name of the publisher.</p>
+</dd>
+<dt>description<span class="classifier">str</span></dt><dd><p>Optional description of the publisher.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.serializers.PublisherSerializer.Meta">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="_modules/newsroom/api/serializers.html#PublisherSerializer.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.serializers.PublisherSerializer.Meta" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.serializers.PublisherSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'name',</span> <span class="pre">'description']</span></em><a class="headerlink" href="#newsroom.api.serializers.PublisherSerializer.Meta.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.serializers.PublisherSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#newsroom.api.serializers.PublisherSerializer.Meta.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="newsroom.html#newsroom.models.Publisher" title="newsroom.models.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Publisher</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-newsroom.api.urls">
+<span id="newsroom-api-urls-module"></span><h2>newsroom.api.urls module<a class="headerlink" href="#module-newsroom.api.urls" title="Link to this heading"></a></h2>
+<p>URL configuration for the Newsroom API.</p>
+<p>This module registers API routes for:</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">PublisherViewSet</span></code></p></li>
+</ul>
+<p>It also includes authentication endpoints for the Django REST Framework
+browsable API.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="newsroom.api.urls.router">
+<span class="sig-prename descclassname"><span class="pre">newsroom.api.urls.</span></span><span class="sig-name descname"><span class="pre">router</span></span><a class="headerlink" href="#newsroom.api.urls.router" title="Link to this definition"></a></dt>
+<dd><p>Default router for automatically generating RESTful routes.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="newsroom.api.urls.urlpatterns">
+<span class="sig-prename descclassname"><span class="pre">newsroom.api.urls.</span></span><span class="sig-name descname"><span class="pre">urlpatterns</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;URLResolver</span> <span class="pre">rest_framework.routers.DefaultRouter.urls</span> <span class="pre">(rest_framework.routers.DefaultRouter.urls.app_name:rest_framework.routers.DefaultRouter.urls.app_name)</span> <span class="pre">''&gt;,</span> <span class="pre">&lt;URLResolver</span> <span class="pre">rest_framework.urls</span> <span class="pre">(rest_framework.urls.app_name:rest_framework.urls.app_name)</span> <span class="pre">'auth/'&gt;]</span></em><a class="headerlink" href="#newsroom.api.urls.urlpatterns" title="Link to this definition"></a></dt>
+<dd><p>URL patterns for the Newsroom API.</p>
+</dd></dl>
+
+</section>
+<section id="module-newsroom.api.views">
+<span id="newsroom-api-views-module"></span><h2>newsroom.api.views module<a class="headerlink" href="#module-newsroom.api.views" title="Link to this heading"></a></h2>
+<p>API viewsets for the Newsroom application.</p>
+<p>This module defines viewsets for articles and publishers with
+role-based permissions and custom actions.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#newsroom.api.views.ArticleViewSet" title="newsroom.api.views.ArticleViewSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></a> – CRUD operations, approval workflow, and
+personalized article queries.</p></li>
+<li><p><a class="reference internal" href="#newsroom.api.views.PublisherViewSet" title="newsroom.api.views.PublisherViewSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">PublisherViewSet</span></code></a> – Read-only access to publishers.</p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.views.</span></span><span class="sig-name descname"><span class="pre">ArticleViewSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/views.html#ArticleViewSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.views.ArticleViewSet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelViewSet</span></code></p>
+<p>Viewset for managing <a class="reference internal" href="newsroom.html#newsroom.models.Article" title="newsroom.models.Article"><code class="xref py py-class docutils literal notranslate"><span class="pre">Article</span></code></a> instances.</p>
+<p>Provides default CRUD actions along with custom actions
+for approving, listing personal articles, and listing
+subscribed articles. Enforces role-based permissions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.queryset" title="Link to this definition"></a></dt>
+<dd><p>Default queryset with related publisher and author preloaded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QuerySet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.serializer_class" title="Link to this definition"></a></dt>
+<dd><p>Serializer used for articles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#newsroom.api.serializers.ArticleSerializer" title="newsroom.api.serializers.ArticleSerializer">ArticleSerializer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.approve">
+<span class="sig-name descname"><span class="pre">approve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.approve" title="Link to this definition"></a></dt>
+<dd><p>Approve an article.</p>
+<p>Changes status to APPROVED and sets <code class="docutils literal notranslate"><span class="pre">approved_at</span></code> timestamp if needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON with <code class="docutils literal notranslate"><span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">approved_at</span></code> timestamp.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.get_permissions">
+<span class="sig-name descname"><span class="pre">get_permissions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/views.html#ArticleViewSet.get_permissions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.get_permissions" title="Link to this definition"></a></dt>
+<dd><p>Return appropriate permissions depending on the action.</p>
+<ul class="simple">
+<li><p><strong>list, retrieve, mine, subscribed</strong> → Authenticated users.</p></li>
+<li><p><strong>create, update, partial_update, destroy</strong> → Journalists only.</p></li>
+<li><p><strong>approve</strong> → Editors only.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/views.html#ArticleViewSet.get_queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.get_queryset" title="Link to this definition"></a></dt>
+<dd><p>Return a filtered queryset based on the user’s role.</p>
+<ul class="simple">
+<li><p>Anonymous users: only approved articles.</p></li>
+<li><p>Staff/superusers: all articles.</p></li>
+<li><p>Editors: all articles.</p></li>
+<li><p>Journalists: own articles + approved ones.</p></li>
+<li><p>Readers: only approved articles.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.mine">
+<span class="sig-name descname"><span class="pre">mine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.mine" title="Link to this definition"></a></dt>
+<dd><p>List articles authored by the current journalist.</p>
+<p>Only returns results for journalist users.
+Results are ordered by newest first.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.perform_create">
+<span class="sig-name descname"><span class="pre">perform_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serializer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/views.html#ArticleViewSet.perform_create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.perform_create" title="Link to this definition"></a></dt>
+<dd><p>Create a new article authored by the current user.</p>
+<p>Ensures only journalists (or staff/superusers) can create.
+New articles are saved with status <code class="docutils literal notranslate"><span class="pre">PENDING</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>PermissionDenied</strong> – If the user is not allowed to create articles.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.perform_destroy">
+<span class="sig-name descname"><span class="pre">perform_destroy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/views.html#ArticleViewSet.perform_destroy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.perform_destroy" title="Link to this definition"></a></dt>
+<dd><p>Delete an article with role-based restrictions.</p>
+<ul class="simple">
+<li><p>Editors: can delete any article.</p></li>
+<li><p>Journalists: can delete only their own articles.</p></li>
+<li><p>Staff/superusers: unrestricted.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>PermissionDenied</strong> – If the user is not allowed to delete the article.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.perform_update">
+<span class="sig-name descname"><span class="pre">perform_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serializer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/views.html#ArticleViewSet.perform_update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.perform_update" title="Link to this definition"></a></dt>
+<dd><p>Update an article with role-based restrictions.</p>
+<ul class="simple">
+<li><p>Editors: can update any article.</p></li>
+<li><p>Journalists: can update only their own articles.</p></li>
+<li><p>Staff/superusers: unrestricted.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>PermissionDenied</strong> – If the user is not allowed to update the article.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;QuerySet</span> <span class="pre">[&lt;Article:</span> <span class="pre">Rooftop</span> <span class="pre">Gardens</span> <span class="pre">Turn</span> <span class="pre">Old</span> <span class="pre">Warehouses</span> <span class="pre">Green</span> <span class="pre">(Approved)&gt;,</span> <span class="pre">&lt;Article:</span> <span class="pre">Pocket</span> <span class="pre">Drone</span> <span class="pre">Racing</span> <span class="pre">Gains</span> <span class="pre">a</span> <span class="pre">New</span> <span class="pre">Following</span> <span class="pre">(Approved)&gt;,</span> <span class="pre">&lt;Article:</span> <span class="pre">When</span> <span class="pre">AI</span> <span class="pre">Paints</span> <span class="pre">the</span> <span class="pre">Morning</span> <span class="pre">Coffee</span> <span class="pre">(Approved)&gt;]&gt;</span></em><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#newsroom.api.serializers.ArticleSerializer" title="newsroom.api.serializers.ArticleSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArticleSerializer</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="newsroom.api.views.ArticleViewSet.subscribed">
+<span class="sig-name descname"><span class="pre">subscribed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#newsroom.api.views.ArticleViewSet.subscribed" title="Link to this definition"></a></dt>
+<dd><p>List approved articles from a reader’s subscriptions.</p>
+<p>Includes articles from:
+- Publishers the reader is subscribed to.
+- Journalists the reader is subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON list of approved subscribed articles.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="newsroom.api.views.PublisherViewSet">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">newsroom.api.views.</span></span><span class="sig-name descname"><span class="pre">PublisherViewSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/newsroom/api/views.html#PublisherViewSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#newsroom.api.views.PublisherViewSet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ReadOnlyModelViewSet</span></code></p>
+<p>Read-only viewset for <a class="reference internal" href="newsroom.html#newsroom.models.Publisher" title="newsroom.models.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Publisher</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>)</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.views.PublisherViewSet.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><a class="headerlink" href="#newsroom.api.views.PublisherViewSet.queryset" title="Link to this definition"></a></dt>
+<dd><p>All publishers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QuerySet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.views.PublisherViewSet.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#newsroom.api.views.PublisherViewSet.serializer_class" title="Link to this definition"></a></dt>
+<dd><p>Serializer used for publishers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#newsroom.api.serializers.PublisherSerializer" title="newsroom.api.serializers.PublisherSerializer">PublisherSerializer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="newsroom.api.views.PublisherViewSet.permission_classes">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><a class="headerlink" href="#newsroom.api.views.PublisherViewSet.permission_classes" title="Link to this definition"></a></dt>
+<dd><p>Requires authentication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[rest_framework.permissions.IsAuthenticated]</span></em><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;QuerySet</span> <span class="pre">[&lt;Publisher:</span> <span class="pre">Byte</span> <span class="pre">&amp;</span> <span class="pre">Brush&gt;,</span> <span class="pre">&lt;Publisher:</span> <span class="pre">Greenline</span> <span class="pre">Dispatch&gt;,</span> <span class="pre">&lt;Publisher:</span> <span class="pre">Urban</span> <span class="pre">Meridian&gt;]&gt;</span></em><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#newsroom.api.serializers.PublisherSerializer" title="newsroom.api.serializers.PublisherSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">PublisherSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-newsroom.api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-newsroom.api" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="newsroom.html" class="btn btn-neutral float-left" title="newsroom package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="capostone.html" class="btn btn-neutral float-right" title="capostone package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Janke.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>newsroom.api.permissions &mdash; scoop_newsroom 00.00.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=d7bb8d4d"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            scoop_newsroom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Module contents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../newsroom.html">newsroom package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html">newsroom.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.admin">newsroom.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.ArticleAdmin"><code class="docutils literal notranslate"><span class="pre">ArticleAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.JournalistProfileAdmin"><code class="docutils literal notranslate"><span class="pre">JournalistProfileAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.PublisherAdmin"><code class="docutils literal notranslate"><span class="pre">PublisherAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.admin.approve_articles"><code class="docutils literal notranslate"><span class="pre">approve_articles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.apps">newsroom.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.apps.NewsroomConfig"><code class="docutils literal notranslate"><span class="pre">NewsroomConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.emails">newsroom.emails module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.emails.notify"><code class="docutils literal notranslate"><span class="pre">notify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.forms">newsroom.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.forms.ArticleForm"><code class="docutils literal notranslate"><span class="pre">ArticleForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.forms.SignUpForm"><code class="docutils literal notranslate"><span class="pre">SignUpForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.forms.StyledAuthForm"><code class="docutils literal notranslate"><span class="pre">StyledAuthForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.models">newsroom.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.models.JournalistProfile"><code class="docutils literal notranslate"><span class="pre">JournalistProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.models.Publisher"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.signals">newsroom.signals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.signals.ensure_journalist_profile"><code class="docutils literal notranslate"><span class="pre">ensure_journalist_profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.signals.mark_just_approved"><code class="docutils literal notranslate"><span class="pre">mark_just_approved()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.signals.on_article_approved"><code class="docutils literal notranslate"><span class="pre">on_article_approved()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.test_api">newsroom.test_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.test_api.APITests"><code class="docutils literal notranslate"><span class="pre">APITests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.urls">newsroom.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.urls.app_name"><code class="docutils literal notranslate"><span class="pre">app_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.utils_x">newsroom.utils_x module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.utils_x.post_to_x"><code class="docutils literal notranslate"><span class="pre">post_to_x()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom.views">newsroom.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ArticleCreateView"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ArticleDeleteView"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ArticleDetailView"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ArticleUpdateView"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.DashboardView"><code class="docutils literal notranslate"><span class="pre">DashboardView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.LandingView"><code class="docutils literal notranslate"><span class="pre">LandingView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.LoginView"><code class="docutils literal notranslate"><span class="pre">LoginView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.ReviewQueueView"><code class="docutils literal notranslate"><span class="pre">ReviewQueueView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.SignUpView"><code class="docutils literal notranslate"><span class="pre">SignUpView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.html#newsroom.views.approve_article"><code class="docutils literal notranslate"><span class="pre">approve_article()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.html#module-newsroom">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../newsroom.api.html">newsroom.api package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api.permissions">newsroom.api.permissions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.CanApprove"><code class="docutils literal notranslate"><span class="pre">CanApprove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsAuthorOrEditor"><code class="docutils literal notranslate"><span class="pre">IsAuthorOrEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsEditor"><code class="docutils literal notranslate"><span class="pre">IsEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsEditorOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsEditorOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsJournalist"><code class="docutils literal notranslate"><span class="pre">IsJournalist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsJournalistOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsJournalistOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.IsReader"><code class="docutils literal notranslate"><span class="pre">IsReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.permissions.ReadOnly"><code class="docutils literal notranslate"><span class="pre">ReadOnly</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api.serializers">newsroom.api.serializers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.serializers.ArticleSerializer"><code class="docutils literal notranslate"><span class="pre">ArticleSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.serializers.PublisherSerializer"><code class="docutils literal notranslate"><span class="pre">PublisherSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api.urls">newsroom.api.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.urls.router"><code class="docutils literal notranslate"><span class="pre">router</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api.views">newsroom.api.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.views.ArticleViewSet"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../newsroom.api.html#newsroom.api.views.PublisherViewSet"><code class="docutils literal notranslate"><span class="pre">PublisherViewSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../newsroom.api.html#module-newsroom.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../capostone.html">capostone package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone.asgi">capostone.asgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone.settings">capostone.settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone.urls">capostone.urls module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../capostone.html#capostone.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone.wsgi">capostone.wsgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capostone.html#module-capostone">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../manage.html">manage module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../manage.html#manage.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">scoop_newsroom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">newsroom.api.permissions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for newsroom.api.permissions</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Custom permission classes for the Newsroom API.</span>
+
+<span class="sd">This module defines role-based and action-based permission classes</span>
+<span class="sd">for use with Django REST Framework viewsets and views.</span>
+
+<span class="sd">Helpers</span>
+<span class="sd">-------</span>
+<span class="sd">The helper functions (_is_auth, _is_admin, etc.) wrap role checks on</span>
+<span class="sd">the custom User model, handling missing methods gracefully.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasePermission</span><span class="p">,</span> <span class="n">SAFE_METHODS</span>
+
+
+<span class="c1"># ---- Helpers ---------------------------------------------------------------</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_auth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if the user is authenticated.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    u : User</span>
+<span class="sd">        The user instance.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if authenticated, else False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">u</span> <span class="ow">and</span> <span class="n">u</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_admin</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if the user is a staff or superuser.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    u : User</span>
+<span class="sd">        The user instance.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if staff or superuser, else False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_staff&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;is_superuser&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_reader</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if the user has the Reader role.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    u : User</span>
+<span class="sd">        The user instance.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if Reader, else False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">is_reader</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_editor</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if the user has the Editor role.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    u : User</span>
+<span class="sd">        The user instance.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if Editor, else False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">is_editor</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_journalist</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if the user has the Journalist role.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    u : User</span>
+<span class="sd">        The user instance.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if Journalist, else False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">is_journalist</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="c1"># ---- Simple role gates (view-level) ---------------------------------------</span>
+
+<div class="viewcode-block" id="IsReader">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsReader">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IsReader</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Allow only Readers (plus staff/superusers).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="IsReader.has_permission">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsReader.has_permission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the user is a Reader or admin.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="n">_is_auth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">_is_reader</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_admin</span><span class="p">(</span><span class="n">u</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="IsEditor">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsEditor">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IsEditor</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Allow only Editors (plus staff/superusers).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="IsEditor.has_permission">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsEditor.has_permission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the user is an Editor or admin.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="n">_is_auth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">_is_editor</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_admin</span><span class="p">(</span><span class="n">u</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="IsJournalist">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsJournalist">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IsJournalist</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Allow only Journalists (plus staff/superusers).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="IsJournalist.has_permission">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsJournalist.has_permission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the user is a Journalist or admin.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="n">_is_auth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">_is_journalist</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_admin</span><span class="p">(</span><span class="n">u</span><span class="p">))</span></div>
+</div>
+
+
+
+<span class="c1"># ---- Read-only convenience -------------------------------------------------</span>
+
+<div class="viewcode-block" id="ReadOnly">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.ReadOnly">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ReadOnly</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Allow only safe methods (GET/HEAD/OPTIONS).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ReadOnly.has_permission">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.ReadOnly.has_permission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the request method is safe.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="n">SAFE_METHODS</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="IsEditorOrReadOnly">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsEditorOrReadOnly">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IsEditorOrReadOnly</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Anyone can read; only Editors (or staff/superusers) can modify.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="IsEditorOrReadOnly.has_permission">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsEditorOrReadOnly.has_permission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check read-only for all, write access for Editors/admins.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="n">SAFE_METHODS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="n">_is_auth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">_is_editor</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_admin</span><span class="p">(</span><span class="n">u</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="IsJournalistOrReadOnly">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsJournalistOrReadOnly">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IsJournalistOrReadOnly</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Anyone can read; only Journalists (or staff/superusers) can modify.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="IsJournalistOrReadOnly.has_permission">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsJournalistOrReadOnly.has_permission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check read-only for all, write access for Journalists/admins.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="n">SAFE_METHODS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="n">_is_auth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">_is_journalist</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_admin</span><span class="p">(</span><span class="n">u</span><span class="p">))</span></div>
+</div>
+
+
+
+<span class="c1"># ---- Object-level checks ---------------------------------------------------</span>
+
+<div class="viewcode-block" id="IsAuthorOrEditor">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsAuthorOrEditor">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IsAuthorOrEditor</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    SAFE methods are allowed.</span>
+<span class="sd">    For write methods: allow if the user is the object&#39;s author,</span>
+<span class="sd">    an Editor, or staff/superuser.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="IsAuthorOrEditor.has_object_permission">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.IsAuthorOrEditor.has_object_permission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_object_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if user is author, Editor, or admin for unsafe methods.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obj : Model</span>
+<span class="sd">            The object being accessed.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if permission is granted, else False.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="n">SAFE_METHODS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="n">is_author</span> <span class="o">=</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;author_id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">_is_auth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">is_author</span> <span class="ow">or</span> <span class="n">_is_editor</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_admin</span><span class="p">(</span><span class="n">u</span><span class="p">))</span></div>
+</div>
+
+
+
+<span class="c1"># ---- Approval permission (optional, if you want to check the custom perm) --</span>
+
+<div class="viewcode-block" id="CanApprove">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.CanApprove">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CanApprove</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Allow users who can approve (custom model perm) or Editors/admins.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The Article model defines::</span>
+
+<span class="sd">        Meta.permissions = [(&quot;can_approve&quot;, &quot;Can approve articles&quot;)]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CanApprove.has_permission">
+<a class="viewcode-back" href="../../../newsroom.api.html#newsroom.api.permissions.CanApprove.has_permission">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if user is allowed to approve articles.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="n">_is_auth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+            <span class="n">_is_editor</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_admin</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="ow">or</span> <span class="n">u</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="s2">&quot;newsroom.can_approve&quot;</span><span class="p">)</span>
+        <span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Janke.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

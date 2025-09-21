@@ -1,0 +1,619 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>newsroom.models &mdash; scoop_newsroom 00.00.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d7bb8d4d"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            scoop_newsroom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Module contents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../newsroom.html">newsroom package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html">newsroom.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.admin">newsroom.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.ArticleAdmin"><code class="docutils literal notranslate"><span class="pre">ArticleAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.JournalistProfileAdmin"><code class="docutils literal notranslate"><span class="pre">JournalistProfileAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.PublisherAdmin"><code class="docutils literal notranslate"><span class="pre">PublisherAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.approve_articles"><code class="docutils literal notranslate"><span class="pre">approve_articles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.apps">newsroom.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.apps.NewsroomConfig"><code class="docutils literal notranslate"><span class="pre">NewsroomConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.emails">newsroom.emails module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.emails.notify"><code class="docutils literal notranslate"><span class="pre">notify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.forms">newsroom.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.forms.ArticleForm"><code class="docutils literal notranslate"><span class="pre">ArticleForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.forms.SignUpForm"><code class="docutils literal notranslate"><span class="pre">SignUpForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.forms.StyledAuthForm"><code class="docutils literal notranslate"><span class="pre">StyledAuthForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.models">newsroom.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.models.JournalistProfile"><code class="docutils literal notranslate"><span class="pre">JournalistProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.models.Publisher"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.signals">newsroom.signals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.signals.ensure_journalist_profile"><code class="docutils literal notranslate"><span class="pre">ensure_journalist_profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.signals.mark_just_approved"><code class="docutils literal notranslate"><span class="pre">mark_just_approved()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.signals.on_article_approved"><code class="docutils literal notranslate"><span class="pre">on_article_approved()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.test_api">newsroom.test_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.test_api.APITests"><code class="docutils literal notranslate"><span class="pre">APITests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.urls">newsroom.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.urls.app_name"><code class="docutils literal notranslate"><span class="pre">app_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.utils_x">newsroom.utils_x module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.utils_x.post_to_x"><code class="docutils literal notranslate"><span class="pre">post_to_x()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.views">newsroom.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ArticleCreateView"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ArticleDeleteView"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ArticleDetailView"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ArticleUpdateView"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.DashboardView"><code class="docutils literal notranslate"><span class="pre">DashboardView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.LandingView"><code class="docutils literal notranslate"><span class="pre">LandingView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.LoginView"><code class="docutils literal notranslate"><span class="pre">LoginView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ReviewQueueView"><code class="docutils literal notranslate"><span class="pre">ReviewQueueView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.SignUpView"><code class="docutils literal notranslate"><span class="pre">SignUpView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.approve_article"><code class="docutils literal notranslate"><span class="pre">approve_article()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../newsroom.api.html">newsroom.api package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api.permissions">newsroom.api.permissions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.CanApprove"><code class="docutils literal notranslate"><span class="pre">CanApprove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsAuthorOrEditor"><code class="docutils literal notranslate"><span class="pre">IsAuthorOrEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsEditor"><code class="docutils literal notranslate"><span class="pre">IsEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsEditorOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsEditorOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsJournalist"><code class="docutils literal notranslate"><span class="pre">IsJournalist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsJournalistOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsJournalistOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsReader"><code class="docutils literal notranslate"><span class="pre">IsReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.ReadOnly"><code class="docutils literal notranslate"><span class="pre">ReadOnly</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api.serializers">newsroom.api.serializers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.serializers.ArticleSerializer"><code class="docutils literal notranslate"><span class="pre">ArticleSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.serializers.PublisherSerializer"><code class="docutils literal notranslate"><span class="pre">PublisherSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api.urls">newsroom.api.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.urls.router"><code class="docutils literal notranslate"><span class="pre">router</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api.views">newsroom.api.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.views.ArticleViewSet"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.views.PublisherViewSet"><code class="docutils literal notranslate"><span class="pre">PublisherViewSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../capostone.html">capostone package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone.asgi">capostone.asgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone.settings">capostone.settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone.urls">capostone.urls module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../capostone.html#capostone.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone.wsgi">capostone.wsgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../manage.html">manage module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html#manage.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scoop_newsroom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">newsroom.models</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for newsroom.models</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Models for the Newsroom application.</span>
+
+<span class="sd">This module defines the core models:</span>
+
+<span class="sd">- :class:`User` – a custom user model with roles (Reader, Editor, Journalist).</span>
+<span class="sd">- :class:`Publisher` – representing publishing organizations.</span>
+<span class="sd">- :class:`Article` – representing news articles with approval workflow.</span>
+<span class="sd">- :class:`JournalistProfile` – extended profile for journalists.</span>
+
+<span class="sd">Each model includes constraints, relationships, and helper methods</span>
+<span class="sd">relevant to the newsroom domain.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.conf</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbstractUser</span><span class="p">,</span> <span class="n">Group</span><span class="p">,</span> <span class="n">Permission</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.core.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ValidationError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Q</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models.signals</span><span class="w"> </span><span class="kn">import</span> <span class="n">post_migrate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.dispatch</span><span class="w"> </span><span class="kn">import</span> <span class="n">receiver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">timezone</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Custom User</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+<div class="viewcode-block" id="User">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.User">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">AbstractUser</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Custom user model with roles and newsroom-specific fields.</span>
+
+<span class="sd">    Extends :class:`django.contrib.auth.models.AbstractUser` by adding a</span>
+<span class="sd">    ``role`` field and additional relationships for subscriptions and</span>
+<span class="sd">    published articles.</span>
+
+<span class="sd">    Roles</span>
+<span class="sd">    -----</span>
+<span class="sd">    - **READER** – subscribes to publishers/journalists.</span>
+<span class="sd">    - **EDITOR** – manages content and approvals.</span>
+<span class="sd">    - **JOURNALIST** – creates and publishes articles.</span>
+
+<span class="sd">    Fields</span>
+<span class="sd">    ------</span>
+<span class="sd">    role : models.CharField</span>
+<span class="sd">        The user&#39;s role within the newsroom.</span>
+<span class="sd">    subscriptions_to_publishers : models.ManyToManyField</span>
+<span class="sd">        Publishers the user subscribes to (reader only).</span>
+<span class="sd">    subscriptions_to_journalists : models.ManyToManyField</span>
+<span class="sd">        Journalists the user subscribes to (reader only).</span>
+<span class="sd">    published_articles : models.ManyToManyField</span>
+<span class="sd">        Articles independently published by the journalist.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="User.Roles">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.User.Roles">[docs]</a>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Roles</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TextChoices</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Available user roles.&quot;&quot;&quot;</span>
+
+        <span class="n">READER</span> <span class="o">=</span> <span class="s2">&quot;READER&quot;</span><span class="p">,</span> <span class="s2">&quot;Reader&quot;</span>
+        <span class="n">EDITOR</span> <span class="o">=</span> <span class="s2">&quot;EDITOR&quot;</span><span class="p">,</span> <span class="s2">&quot;Editor&quot;</span>
+        <span class="n">JOURNALIST</span> <span class="o">=</span> <span class="s2">&quot;JOURNALIST&quot;</span><span class="p">,</span> <span class="s2">&quot;Journalist&quot;</span></div>
+
+
+    <span class="n">role</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">Roles</span><span class="o">.</span><span class="n">choices</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">Roles</span><span class="o">.</span><span class="n">READER</span>
+    <span class="p">)</span>
+
+    <span class="c1"># --- Reader fields ---</span>
+    <span class="n">subscriptions_to_publishers</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span>
+        <span class="s2">&quot;Publisher&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;subscribed_readers&quot;</span>
+    <span class="p">)</span>
+    <span class="n">subscriptions_to_journalists</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span>
+        <span class="s2">&quot;self&quot;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">symmetrical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;reader_subscribers&quot;</span><span class="p">,</span>
+        <span class="n">limit_choices_to</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">Roles</span><span class="o">.</span><span class="n">JOURNALIST</span><span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="c1"># --- Journalist fields ---</span>
+    <span class="n">published_articles</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span>
+        <span class="s2">&quot;Article&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;independent_authors&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Helpers</span>
+<div class="viewcode-block" id="User.is_reader">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.User.is_reader">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_reader</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return ``True`` if the user has the Reader role.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">READER</span></div>
+
+
+<div class="viewcode-block" id="User.is_editor">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.User.is_editor">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_editor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return ``True`` if the user has the Editor role.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">EDITOR</span></div>
+
+
+<div class="viewcode-block" id="User.is_journalist">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.User.is_journalist">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_journalist</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return ``True`` if the user has the Journalist role.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">JOURNALIST</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the username as the string representation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_username</span><span class="p">()</span>
+
+<div class="viewcode-block" id="User.clean">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.User.clean">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate role-specific constraints.</span>
+
+<span class="sd">        - Journalists cannot have reader subscriptions.</span>
+<span class="sd">        - Readers cannot have published articles.</span>
+<span class="sd">        - Editors are unrestricted.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValidationError</span>
+<span class="sd">            If role-specific constraints are violated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">JOURNALIST</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">subscriptions_to_publishers</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+                <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscriptions_to_journalists</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+            <span class="p">):</span>
+                <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span>
+                    <span class="s2">&quot;Journalists cannot have reader subscriptions.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">READER</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">published_articles</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span>
+                    <span class="s2">&quot;Readers cannot have journalist publishing fields.&quot;</span>
+                <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="User.save">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.User.save">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the user and assign the user to the group matching their role.</span>
+
+<span class="sd">        Each user belongs to exactly one group (Reader, Editor, Journalist).</span>
+<span class="sd">        Groups and permissions are created in the ``post_migrate`` hook.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        - Overrides :meth:`django.db.models.Model.save`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">role_to_group</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">READER</span><span class="p">:</span> <span class="s2">&quot;Reader&quot;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">EDITOR</span><span class="p">:</span> <span class="s2">&quot;Editor&quot;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">JOURNALIST</span><span class="p">:</span> <span class="s2">&quot;Journalist&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">role_to_group</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">role</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">target</span><span class="p">:</span>
+            <span class="n">g</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Group</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">set</span><span class="p">([</span><span class="n">g</span><span class="p">])</span></div>
+</div>
+
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Publisher</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+<div class="viewcode-block" id="Publisher">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.Publisher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Publisher</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A publishing organization.</span>
+
+<span class="sd">    Fields</span>
+<span class="sd">    ------</span>
+<span class="sd">    name : models.CharField</span>
+<span class="sd">        Unique name of the publisher.</span>
+<span class="sd">    description : models.TextField</span>
+<span class="sd">        Optional description of the publisher.</span>
+<span class="sd">    editors : models.ManyToManyField</span>
+<span class="sd">        Users with the Editor role.</span>
+<span class="sd">    journalists : models.ManyToManyField</span>
+<span class="sd">        Users with the Journalist role.</span>
+
+<span class="sd">    Meta</span>
+<span class="sd">    ----</span>
+<span class="sd">    ordering : tuple</span>
+<span class="sd">        Default ordering is by name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">editors</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">,</span>
+        <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;editor_publishers&quot;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">limit_choices_to</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">User</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">EDITOR</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">journalists</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">,</span>
+        <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;journalist_publishers&quot;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">limit_choices_to</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">User</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">JOURNALIST</span><span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the publisher&#39;s name as string representation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Article</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+<div class="viewcode-block" id="Article">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.Article">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A news article authored by a journalist and reviewed by an editor.</span>
+
+<span class="sd">    Fields</span>
+<span class="sd">    ------</span>
+<span class="sd">    title : models.CharField</span>
+<span class="sd">        Title of the article.</span>
+<span class="sd">    body : models.TextField</span>
+<span class="sd">        Main body text.</span>
+<span class="sd">    cover_url : models.URLField</span>
+<span class="sd">        Optional cover image URL.</span>
+<span class="sd">    publisher : models.ForeignKey</span>
+<span class="sd">        The publisher associated with the article.</span>
+<span class="sd">    author : models.ForeignKey</span>
+<span class="sd">        The journalist author.</span>
+<span class="sd">    status : models.CharField</span>
+<span class="sd">        Workflow status (draft, pending, approved, rejected).</span>
+<span class="sd">    created_at : models.DateTimeField</span>
+<span class="sd">        Timestamp of article creation.</span>
+<span class="sd">    updated_at : models.DateTimeField</span>
+<span class="sd">        Timestamp of last update.</span>
+<span class="sd">    approved_at : models.DateTimeField</span>
+<span class="sd">        Timestamp when the article was approved.</span>
+
+<span class="sd">    Meta</span>
+<span class="sd">    ----</span>
+<span class="sd">    ordering : tuple</span>
+<span class="sd">        Default ordering: approved_at desc, created_at desc.</span>
+<span class="sd">    permissions : list</span>
+<span class="sd">        Custom permission ``can_approve``.</span>
+<span class="sd">    indexes : list</span>
+<span class="sd">        Database indexes for common queries.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Article.Status">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.Article.Status">[docs]</a>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Status</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TextChoices</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Workflow statuses for articles.&quot;&quot;&quot;</span>
+
+        <span class="n">DRAFT</span> <span class="o">=</span> <span class="s2">&quot;DRAFT&quot;</span><span class="p">,</span> <span class="s2">&quot;Draft&quot;</span>
+        <span class="n">PENDING</span> <span class="o">=</span> <span class="s2">&quot;PENDING&quot;</span><span class="p">,</span> <span class="s2">&quot;Pending Approval&quot;</span>
+        <span class="n">APPROVED</span> <span class="o">=</span> <span class="s2">&quot;APPROVED&quot;</span><span class="p">,</span> <span class="s2">&quot;Approved&quot;</span>
+        <span class="n">REJECTED</span> <span class="o">=</span> <span class="s2">&quot;REJECTED&quot;</span><span class="p">,</span> <span class="s2">&quot;Rejected&quot;</span></div>
+
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">cover_url</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">URLField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">publisher</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="n">Publisher</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;articles&quot;</span>
+    <span class="p">)</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">,</span>
+        <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span>
+        <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;articles&quot;</span><span class="p">,</span>
+        <span class="n">limit_choices_to</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">User</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">JOURNALIST</span><span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">Status</span><span class="o">.</span><span class="n">choices</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">Status</span><span class="o">.</span><span class="n">DRAFT</span>
+    <span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">updated_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">approved_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;-approved_at&quot;</span><span class="p">,</span> <span class="s2">&quot;-created_at&quot;</span><span class="p">)</span>
+        <span class="n">permissions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;can_approve&quot;</span><span class="p">,</span> <span class="s2">&quot;Can approve articles&quot;</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">models</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="s2">&quot;approved_at&quot;</span><span class="p">)),</span>
+            <span class="n">models</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;publisher&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">)),</span>
+            <span class="n">models</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;author&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">)),</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the article&#39;s title with its status as string representation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_status_display</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_approved</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return whether the article is approved.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            ``True`` if the status is APPROVED, else ``False``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span>
+
+<div class="viewcode-block" id="Article.clean">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.Article.clean">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate article fields before saving.</span>
+
+<span class="sd">        - Author must have the Journalist role.</span>
+<span class="sd">        - ``approved_at`` can only be set if status is APPROVED.</span>
+<span class="sd">        - If approved and timestamp not set, auto-assign now.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValidationError</span>
+<span class="sd">            If constraints are violated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="s2">&quot;is_journalist&quot;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="kc">False</span><span class="p">)():</span>
+            <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span>
+                <span class="p">{</span><span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Author must have the Journalist role.&quot;</span><span class="p">}</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">approved_at</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span>
+                <span class="p">{</span><span class="s2">&quot;approved_at&quot;</span><span class="p">:</span> <span class="s2">&quot;approved_at can only be set when status is APPROVED.&quot;</span><span class="p">}</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">approved_at</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">approved_at</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Article.save">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.Article.save">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the article after running validation.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        - Calls :meth:`full_clean` before saving to enforce validation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">full_clean</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<span class="c1"># ---------------------------------------------------------------------</span>
+<span class="c1"># Journalist Profile</span>
+<span class="c1"># ---------------------------------------------------------------------</span>
+<div class="viewcode-block" id="JournalistProfile">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.forms.JournalistProfile">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">JournalistProfile</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extended profile for journalists.</span>
+
+<span class="sd">    Fields</span>
+<span class="sd">    ------</span>
+<span class="sd">    user : models.OneToOneField</span>
+<span class="sd">        Link to the associated user.</span>
+<span class="sd">    bio : models.TextField</span>
+<span class="sd">        Optional biography of the journalist.</span>
+<span class="sd">    avatar : models.ImageField</span>
+<span class="sd">        Profile image (if Pillow installed), otherwise could use URLField.</span>
+<span class="sd">    created_at : models.DateTimeField</span>
+<span class="sd">        Timestamp of profile creation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;profile&quot;</span>
+    <span class="p">)</span>
+    <span class="n">bio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span> <span class="k">as</span> <span class="n">_m</span>
+    <span class="n">avatar</span> <span class="o">=</span> <span class="n">_m</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="s2">&quot;avatars/&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string representation showing the username.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Profile: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">get_username</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Janke.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

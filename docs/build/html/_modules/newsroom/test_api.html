@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>newsroom.test_api &mdash; scoop_newsroom 00.00.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d7bb8d4d"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            scoop_newsroom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Module contents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../newsroom.html">newsroom package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html">newsroom.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.admin">newsroom.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.ArticleAdmin"><code class="docutils literal notranslate"><span class="pre">ArticleAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.JournalistProfileAdmin"><code class="docutils literal notranslate"><span class="pre">JournalistProfileAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.PublisherAdmin"><code class="docutils literal notranslate"><span class="pre">PublisherAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.admin.approve_articles"><code class="docutils literal notranslate"><span class="pre">approve_articles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.apps">newsroom.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.apps.NewsroomConfig"><code class="docutils literal notranslate"><span class="pre">NewsroomConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.emails">newsroom.emails module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.emails.notify"><code class="docutils literal notranslate"><span class="pre">notify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.forms">newsroom.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.forms.ArticleForm"><code class="docutils literal notranslate"><span class="pre">ArticleForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.forms.SignUpForm"><code class="docutils literal notranslate"><span class="pre">SignUpForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.forms.StyledAuthForm"><code class="docutils literal notranslate"><span class="pre">StyledAuthForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.models">newsroom.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.models.JournalistProfile"><code class="docutils literal notranslate"><span class="pre">JournalistProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.models.Publisher"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.signals">newsroom.signals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.signals.ensure_journalist_profile"><code class="docutils literal notranslate"><span class="pre">ensure_journalist_profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.signals.mark_just_approved"><code class="docutils literal notranslate"><span class="pre">mark_just_approved()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.signals.on_article_approved"><code class="docutils literal notranslate"><span class="pre">on_article_approved()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.test_api">newsroom.test_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.test_api.APITests"><code class="docutils literal notranslate"><span class="pre">APITests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.urls">newsroom.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.urls.app_name"><code class="docutils literal notranslate"><span class="pre">app_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.utils_x">newsroom.utils_x module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.utils_x.post_to_x"><code class="docutils literal notranslate"><span class="pre">post_to_x()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom.views">newsroom.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ArticleCreateView"><code class="docutils literal notranslate"><span class="pre">ArticleCreateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ArticleDeleteView"><code class="docutils literal notranslate"><span class="pre">ArticleDeleteView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ArticleDetailView"><code class="docutils literal notranslate"><span class="pre">ArticleDetailView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ArticleUpdateView"><code class="docutils literal notranslate"><span class="pre">ArticleUpdateView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.DashboardView"><code class="docutils literal notranslate"><span class="pre">DashboardView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.LandingView"><code class="docutils literal notranslate"><span class="pre">LandingView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.LoginView"><code class="docutils literal notranslate"><span class="pre">LoginView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.ReviewQueueView"><code class="docutils literal notranslate"><span class="pre">ReviewQueueView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.SignUpView"><code class="docutils literal notranslate"><span class="pre">SignUpView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.html#newsroom.views.approve_article"><code class="docutils literal notranslate"><span class="pre">approve_article()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.html#module-newsroom">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../newsroom.api.html">newsroom.api package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api.permissions">newsroom.api.permissions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.CanApprove"><code class="docutils literal notranslate"><span class="pre">CanApprove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsAuthorOrEditor"><code class="docutils literal notranslate"><span class="pre">IsAuthorOrEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsEditor"><code class="docutils literal notranslate"><span class="pre">IsEditor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsEditorOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsEditorOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsJournalist"><code class="docutils literal notranslate"><span class="pre">IsJournalist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsJournalistOrReadOnly"><code class="docutils literal notranslate"><span class="pre">IsJournalistOrReadOnly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.IsReader"><code class="docutils literal notranslate"><span class="pre">IsReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.permissions.ReadOnly"><code class="docutils literal notranslate"><span class="pre">ReadOnly</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api.serializers">newsroom.api.serializers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.serializers.ArticleSerializer"><code class="docutils literal notranslate"><span class="pre">ArticleSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.serializers.PublisherSerializer"><code class="docutils literal notranslate"><span class="pre">PublisherSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api.urls">newsroom.api.urls module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.urls.router"><code class="docutils literal notranslate"><span class="pre">router</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api.views">newsroom.api.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.views.ArticleViewSet"><code class="docutils literal notranslate"><span class="pre">ArticleViewSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../newsroom.api.html#newsroom.api.views.PublisherViewSet"><code class="docutils literal notranslate"><span class="pre">PublisherViewSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../newsroom.api.html#module-newsroom.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../capostone.html">capostone package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone.asgi">capostone.asgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone.settings">capostone.settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone.urls">capostone.urls module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../capostone.html#capostone.urls.urlpatterns"><code class="docutils literal notranslate"><span class="pre">urlpatterns</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone.wsgi">capostone.wsgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capostone.html#module-capostone">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../manage.html">manage module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html#manage.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scoop_newsroom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">newsroom.test_api</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for newsroom.test_api</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">API tests for the Newsroom application.</span>
+
+<span class="sd">This module contains integration tests using Django REST Framework&#39;s</span>
+<span class="sd">:class:`~rest_framework.test.APITestCase` to validate API behaviors for</span>
+<span class="sd">different user roles (Reader, Editor, Journalist).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">APITestCase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">newsroom.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">Publisher</span><span class="p">,</span> <span class="n">Article</span>
+
+
+<div class="viewcode-block" id="APITests">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.test_api.APITests">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">APITests</span><span class="p">(</span><span class="n">APITestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test suite for Newsroom API endpoints.</span>
+
+<span class="sd">    Tests cover:</span>
+<span class="sd">    - Article creation by journalists.</span>
+<span class="sd">    - Reader access to approved subscription content.</span>
+<span class="sd">    - Editor approval workflow.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="APITests.setUp">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.test_api.APITests.setUp">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create test users and a publisher with role associations.</span>
+
+<span class="sd">        Users:</span>
+<span class="sd">        - Reader</span>
+<span class="sd">        - Editor</span>
+<span class="sd">        - Journalist</span>
+
+<span class="sd">        A publisher is created and linked with the editor and journalist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;pass&quot;</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="n">User</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">READER</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">editor</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;pass&quot;</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="n">User</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">EDITOR</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">journalist</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;pass&quot;</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="n">User</span><span class="o">.</span><span class="n">Roles</span><span class="o">.</span><span class="n">JOURNALIST</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">publisher</span> <span class="o">=</span> <span class="n">Publisher</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Daily Planet&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">publisher</span><span class="o">.</span><span class="n">editors</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">editor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">publisher</span><span class="o">.</span><span class="n">journalists</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="APITests.test_journalist_can_create_article">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.test_api.APITests.test_journalist_can_create_article">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_journalist_can_create_article</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ensure a journalist can create a new article.</span>
+
+<span class="sd">        Workflow:</span>
+<span class="sd">        - Login as journalist.</span>
+<span class="sd">        - POST to ``/api/articles/`` with article data.</span>
+<span class="sd">        - Expect HTTP 201 Created.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;pass&quot;</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/api/articles/&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="s2">&quot;World&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;publisher_id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">publisher</span><span class="o">.</span><span class="n">id</span><span class="p">}</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_201_CREATED</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="APITests.test_reader_sees_only_approved_subscriptions">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.test_api.APITests.test_reader_sees_only_approved_subscriptions">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_reader_sees_only_approved_subscriptions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ensure readers only see approved articles from their subscriptions.</span>
+
+<span class="sd">        Workflow:</span>
+<span class="sd">        - Subscribe the reader to the publisher.</span>
+<span class="sd">        - Create one approved article and one draft.</span>
+<span class="sd">        - Login as reader.</span>
+<span class="sd">        - GET ``/api/articles/``.</span>
+<span class="sd">        - Verify only the approved article is returned.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure reader profile exists and subscribe to publisher</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">reader_profile</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">,</span> <span class="s2">&quot;reader_profile&quot;</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">readerprofile_set</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">reader_profile</span><span class="o">.</span><span class="n">subscribed_publishers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher</span><span class="p">)</span>
+
+        <span class="c1"># Create two articles (approved and draft)</span>
+        <span class="n">art1</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A1&quot;</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="s2">&quot;B1&quot;</span><span class="p">,</span>
+            <span class="n">publisher</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher</span><span class="p">,</span>
+            <span class="n">author</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">art2</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A2&quot;</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="s2">&quot;B2&quot;</span><span class="p">,</span>
+            <span class="n">publisher</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher</span><span class="p">,</span>
+            <span class="n">author</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">DRAFT</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;pass&quot;</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/api/articles/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">art1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">ids</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="n">art2</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">ids</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="APITests.test_editor_can_approve">
+<a class="viewcode-back" href="../../newsroom.html#newsroom.test_api.APITests.test_editor_can_approve">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_editor_can_approve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ensure an editor can approve pending articles.</span>
+
+<span class="sd">        Workflow:</span>
+<span class="sd">        - Create an article with status PENDING.</span>
+<span class="sd">        - Login as editor.</span>
+<span class="sd">        - POST to ``/api/articles/{id}/approve/``.</span>
+<span class="sd">        - Expect HTTP 200 OK.</span>
+<span class="sd">        - Verify article status updates to APPROVED.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">art</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;P&quot;</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">,</span>
+            <span class="n">publisher</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">publisher</span><span class="p">,</span>
+            <span class="n">author</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">journalist</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">PENDING</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;pass&quot;</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/api/articles/</span><span class="si">{</span><span class="n">art</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/approve/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+        <span class="n">art</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">art</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">Article</span><span class="o">.</span><span class="n">Status</span><span class="o">.</span><span class="n">APPROVED</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Janke.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
