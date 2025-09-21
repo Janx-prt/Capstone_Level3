@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block content %}
+<article class="article-detail">
+  <header>
+    <h1>{{ object.title }}</h1>
+    <p>
+      <em>
+        By {{ object.author.get_full_name|default:object.author.username }}
+        · {{ object.created_at|date:"j M Y" }}
+        · {{ object.publisher.name }}
+      </em>
+    </p>
+    <p>
+      <strong>Status:</strong>
+      {% if object.is_approved %}Approved{% else %}{{ object.get_status_display }}{% endif %}
+    </p>
+  </header>
+
+  {% if object.cover_url %}
+  <img class="cover" src="{{ object.cover_url }}" alt="{{ object.title }}">
+  {% endif %}
+
+  <div class="body">{{ object.body|linebreaks }}</div>
+
+  <footer class="meta">
+    <a href="{% url 'articles:article-edit' object.pk %}">Edit</a> ·
+    <a href="{% url 'articles:landing' %}">Back</a>
+  </footer>
+</article>
+{% endblock %}

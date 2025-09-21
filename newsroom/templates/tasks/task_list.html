@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Tasks{% endblock %}
+{% block content %}
+<h1>Tasks</h1>
+<table role="grid">
+  <thead>
+    <tr><th>Done</th><th>Title</th><th>Due</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+  {% for task in tasks %}
+    <tr>
+      <td>
+        <a href="{% url 'tasks:toggle' task.pk %}" aria-label="toggle done">
+          {% if task.is_done %}✓{% else %}○{% endif %}
+        </a>
+      </td>
+      <td><a href="{{ task.get_absolute_url }}">{{ task.title }}</a></td>
+      <td>{{ task.due_date|default:"—" }}</td>
+      <td>
+        <a href="{% url 'tasks:update' task.pk %}">Edit</a> |
+        <a href="{% url 'tasks:delete' task.pk %}">Delete</a>
+      </td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="4">No tasks yet. <a href="{% url 'tasks:create' %}">Create one</a>.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

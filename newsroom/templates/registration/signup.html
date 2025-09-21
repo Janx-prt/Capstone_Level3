@@ -1,0 +1,14 @@
+<!-- templates/registration/signup.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Create profile</h2>
+<form method="post">{% csrf_token %}
+    {{ form.non_field_errors }}
+    {{ form.username.label_tag }} {{ form.username }}
+    {{ form.email.label_tag }} {{ form.email }}
+    {{ form.password1.label_tag }} {{ form.password1 }}
+    {{ form.password2.label_tag }} {{ form.password2 }}
+    {{ form.role.label_tag }} {{ form.role }}
+    <button type="submit">Create profile</button>
+</form>
+{% endblock %}

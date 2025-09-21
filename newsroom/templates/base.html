@@ -1,0 +1,49 @@
+{% load static %}
+{% load tz %}
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}SCOOP{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+</head>
+
+<body>
+  <nav class="container">
+    <ul>
+      <li><strong><a href="{% url 'articles:landing' %}">SCOOP</a></strong></li>
+    </ul>
+    <ul>
+      {% if perms.newsroom.add_article %}
+      <li><a href="{% url 'articles:article-create' %}" role="button">New Article</a></li>
+      {% endif %}
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}">Login</a></li>
+      {% endif %}
+      <li><a href="/admin/">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    {% if messages %}
+    <div>
+      {% for message in messages %}
+      <article class="secondary">{{ message }}</article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="container">
+    <small>&copy; {% now "Y" %} SCOOP</small>
+  </footer>
+</body>
+
+</html>

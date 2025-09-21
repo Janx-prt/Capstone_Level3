@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Newsroom Dashboard</title>
+</head>
+
+<body>
+    <h1>Newsroom</h1>
+
+
+    {% if pending %}
+    <h2>Pending Approval</h2>
+    <ul>
+        {% for a in pending %}
+        <li>
+            <strong>{{ a.title }}</strong> — {{ a.author }}
+            <form method="post" action="/api/articles/{{ a.id }}/approve/">
+                {% csrf_token %}
+                <button type="submit">Approve</button>
+            </form>
+        </li>
+        {% empty %}
+        <li>No pending articles.</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+    {% if mine %}
+    <h2>My Articles</h2>
+    <ul>
+        {% for a in mine %}
+        <li>{{ a }}</li>
+        {% empty %}
+        <li>No articles yet.</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+</html>

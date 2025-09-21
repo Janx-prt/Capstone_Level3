@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}
+{% if view.object %}{{ view.object.title }}{% else %}New article{% endif %}
+{% endblock %}
+
+{% block content %}
+<article class="article-detail">
+    <h1 class="mb-2">
+        {% if view.object %}Edit: {{ view.object.title }}{% else %}New article{% endif %}
+    </h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        {% for field in form %}
+        <div class="mb-3">
+            <label class="block text-sm font-medium mb-1" for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field|add_class:"w-full rounded-xl border border-gray-300 px-3 py-2" }}
+            {% if field.help_text %}
+            <p class="text-xs text-gray-500">{{ field.help_text }}</p>
+            {% endif %}
+            {% for err in field.errors %}
+            <p class="text-red-600 text-sm">{{ err }}</p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+        <div class="mt-6 flex gap-3">
+            <button class="rounded-2xl px-5 py-3 font-semibold bg-black text-white">Save</button>
+            <a href="{% url 'articles:landing' %}">Cancel</a>
+        </div>
+    </form>
+</article>
+{% endblock %}

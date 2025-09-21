@@ -1,0 +1,166 @@
+/* ===== Pico variable overrides (no blue, light theme) ===== */
+html,
+:root,
+html[data-theme="light"] {
+    /* base palette */
+    --pico-background-color: #ffffff;
+    --pico-color: #000000;
+    --pico-muted-color: #000000;
+
+    /* links & buttons (Pico “primary”) */
+    --pico-primary: #000000;
+    --pico-primary-underline: #000000;
+    --pico-primary-hover: #111111;
+    --pico-primary-focus: #000000;
+    --pico-primary-background: #000000;
+
+    /* borders & forms */
+    --pico-border-color: #000000;
+    --pico-form-element-background-color: #ffffff;
+    --pico-form-element-border-color: #000000;
+    --pico-form-element-active-border-color: #000000;
+    --pico-form-element-focus-color: #000000;
+    --pico-form-element-checked-background-color: #000000;
+
+    /* optional: crisper look */
+    --pico-border-radius: 4px;
+}
+
+/* ===== Global ===== */
+body {
+    background: #fff;
+    color: #000;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ===== Nav & footer (black bar) ===== */
+nav.container,
+footer.container {
+    background: #000;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav.container a {
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav.container a:hover {
+    color: #ccc !important;
+}
+
+/* ===== Headings ===== */
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: #000;
+}
+
+/* ===== Forms (login / signup) ===== */
+form {
+    max-width: 560px;
+    margin: 2rem auto;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding: 2rem;
+}
+
+label {
+    font-weight: 700;
+    color: #000;
+    margin-bottom: .25rem;
+    display: block;
+}
+
+input,
+select,
+textarea {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2px solid #000 !important;
+    border-radius: 4px;
+    padding: .75rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #000 !important;
+}
+
+/* ===== Buttons / links ===== */
+button,
+[type="submit"],
+[role="button"] {
+    width: 100%;
+    background: #000 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font-weight: 700;
+    padding: .9rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover,
+[type="submit"]:hover,
+[role="button"]:hover {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+a {
+    color: #000 !important;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+a:hover {
+    color: #555 !important;
+}
+
+/* ARTICLE DETAIL LAYOUT */
+.article-detail {
+    max-width: 760px;
+    /* keep the page narrow */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.article-detail .cover {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    /* << make the image smaller */
+    height: auto;
+    margin: 1.5rem auto;
+    /* center the image */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+}
+
+/* make body text readable */
+.article-detail .body {
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* FORCE LINKS TO BLACK ON THE DETAIL PAGE */
+.article-detail a {
+    color: #000 !important;
+    /* override Pico’s blue */
+    text-decoration: none;
+}
+
+.article-detail a:hover {
+    text-decoration: underline;
+}
