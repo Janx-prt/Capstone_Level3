@@ -52,7 +52,7 @@ requests==2.32.5
 sqlparse==0.5.3
 tzdata==2025.2
 urllib3==2.5.0
-
+PyMySQL==1.1.1
 
 ## Project Structure
 news_project/
@@ -125,6 +125,31 @@ python manage.py seed_demo_articles
 
 6) Run the dev server
 python manage.py runserver
+
+
+## ## Running with Docker
+
+1. Build the image:
+docker build -t scoop_newsroom .
+
+2. Run the container:
+docker run -it -p 8000:8000 scoop_newsroom
+
+3. Make sure you create a .env file with your secrets (database passwords, API keys, etc.) before running in production. Do not commit this file to GitHub.
+#### 2. **Secrets and .gitignore Reminder**  
+## Environment Variables & Secrets
+
+- This project requires certain environment variables (like DB credentials, secret keys, etc.).
+- Create a `.env` file in your project root and populate it with your own values:
+
+
+- Do **not** commit `.env` to GitHub. Use `.gitignore` to keep it safe.
+
+4. Link to Repo (capstone.txt)
+
+Since you’ll create capstone.txt separately, your README doesn’t need the GitHub link — but in capstone.txt, just paste:
+https://github.com/<your-username>/<repo-name>
+
 
 
 ## URLs (Web)
