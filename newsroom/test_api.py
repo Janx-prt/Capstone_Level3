@@ -1,3 +1,11 @@
+"""
+API tests for the Newsroom application.
+
+This module contains integration tests using Django REST Framework's
+:class:`~rest_framework.test.APITestCase` to validate API behaviors for
+different user roles (Reader, Editor, Journalist).
+"""
+
 from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework import status
@@ -5,61 +13,115 @@ from newsroom.models import User, Publisher, Article
 
 
 class APITests(APITestCase):
-def setUp(self):
+    """
+    Test suite for Newsroom API endpoints.
 
+    Tests cover:
+    - Article creation by journalists.
+    - Reader access to approved subscription content.
+    - Editor approval workflow.
+    """
 
-self.reader = User.objects.create_user(
-    username='r', password='pass', role=User.Roles.READER)
-self.editor = User.objects.create_user(
-    username='e', password='pass', role=User.Roles.EDITOR)
-self.journalist = User.objects.create_user(
-    username='j', password='pass', role=User.Roles.JOURNALIST)
-self.publisher = Publisher.objects.create(name='Daily Planet')
-self.publisher.editors.add(self.editor)
-self.publisher.journalists.add(self.journalist)
+    def setUp(self):
+        """
+        Create test users and a publisher with role associations.
 
+        Users:
+        - Reader
+        - Editor
+        - Journalist
 
-def test_journalist_can_create_article(self):
+        A publisher is created and linked with the editor and journalist.
+        """
+        self.reader = User.objects.create_user(
+            username="r", password="pass", role=User.Roles.READER
+        )
+        self.editor = User.objects.create_user(
+            username="e", password="pass", role=User.Roles.EDITOR
+        )
+        self.journalist = User.objects.create_user(
+            username="j", password="pass", role=User.Roles.JOURNALIST
+        )
+        self.publisher = Publisher.objects.create(name="Daily Planet")
+        self.publisher.editors.add(self.editor)
+        self.publisher.journalists.add(self.journalist)
 
+    def test_journalist_can_create_article(self):
+        """
+        Ensure a journalist can create a new article.
 
-self.client.login(username='j', password='pass')
-url = '/api/articles/'
-data = {"title": "Hello", "body": "World", "publisher_id": self.publisher.id}
-res = self.client.post(url, data, format='json')
-self.assertEqual(res.status_code, status.HTTP_201_CREATED)
+        Workflow:
+        - Login as journalist.
+        - POST to ``/api/articles/`` with article data.
+        - Expect HTTP 201 Created.
+        """
+        self.client.login(username="j", password="pass")
+        url = "/api/articles/"
+        data = {"title": "Hello", "body": "World",
+                "publisher_id": self.publisher.id}
+        res = self.client.post(url, data, format="json")
+        self.assertEqual(res.status_code, status.HTTP_201_CREATED)
 
+    def test_reader_sees_only_approved_subscriptions(self):
+        """
+        Ensure readers only see approved articles from their subscriptions.
 
-def test_reader_sees_only_approved_subscriptions(self):
+        Workflow:
+        - Subscribe the reader to the publisher.
+        - Create one approved article and one draft.
+        - Login as reader.
+        - GET ``/api/articles/``.
+        - Verify only the approved article is returned.
+        """
+        # Ensure reader profile exists and subscribe to publisher
+        self.reader.reader_profile = getattr(
+            self.reader, "reader_profile", None
+        ) or self.reader.readerprofile_set.create()
+        self.reader.reader_profile.subscribed_publishers.add(self.publisher)
 
-    # Make subscriptions
-self.reader.reader_profile = getattr(
-    # ensure exists
-    self.reader, 'reader_profile', None) or self.reader.readerprofile_set.create()
-self.reader.reader_profile.subscribed_publishers.add(self.publisher)
+        # Create two articles (approved and draft)
+        art1 = Article.objects.create(
+            title="A1",
+            body="B1",
+            publisher=self.publisher,
+            author=self.journalist,
+            status=Article.Status.APPROVED,
+        )
+        art2 = Article.objects.create(
+            title="A2",
+            body="B2",
+            publisher=self.publisher,
+            author=self.journalist,
+            status=Article.Status.DRAFT,
+        )
 
+        self.client.login(username="r", password="pass")
+        res = self.client.get("/api/articles/")
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
+        ids = {a["id"] for a in res.json()}
+        self.assertIn(art1.id, ids)
+        self.assertNotIn(art2.id, ids)
 
-# Create two articles
-art1 = Article.objects.create(title='A1', body='B1', publisher=self.publisher,
-                              author=self.journalist, status=Article.Status.APPROVED)
-art2 = Article.objects.create(title='A2', body='B2', publisher=self.publisher,
-                              author=self.journalist, status=Article.Status.DRAFT)
+    def test_editor_can_approve(self):
+        """
+        Ensure an editor can approve pending articles.
 
-
-self.client.login(username='r', password='pass')
-res = self.client.get('/api/articles/')
-self.assertEqual(res.status_code, status.HTTP_200_OK)
-ids = {a['id'] for a in res.json()}
-self.assertIn(art1.id, ids)
-self.assertNotIn(art2.id, ids)
-
-
-def test_editor_can_approve(self):
-
-
-art = Article.objects.create(title='P', body='B', publisher=self.publisher,
-                             author=self.journalist, status=Article.Status.PENDING)
-self.client.login(username='e', password='pass')
-res = self.client.post(f'/api/articles/{art.id}/approve/')
-self.assertEqual(res.status_code, status.HTTP_200_OK)
-art.refresh_from_db()
-self.assertEqual(art.status, Article.Status.APPROVED)
+        Workflow:
+        - Create an article with status PENDING.
+        - Login as editor.
+        - POST to ``/api/articles/{id}/approve/``.
+        - Expect HTTP 200 OK.
+        - Verify article status updates to APPROVED.
+        """
+        art = Article.objects.create(
+            title="P",
+            body="B",
+            publisher=self.publisher,
+            author=self.journalist,
+            status=Article.Status.PENDING,
+        )
+        self.client.login(username="e", password="pass")
+        res = self.client.post(f"/api/articles/{art.id}/approve/")
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
+        art.refresh_from_db()
+        self.assertEqual(art.status, Article.Status.APPROVED)
