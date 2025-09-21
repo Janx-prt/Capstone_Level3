@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Capstone_Level3
 =======
 ## SCOOP — Newsroom & API (Django)
